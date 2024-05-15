@@ -10,7 +10,7 @@ export default async function Home() {
         { cache: "no-store" }
     ).then((res) => res.json());
 
-    const imageURL = `https://${weather.current?.condition.icon}`;
+    const imageURL = `https:${weather.current?.condition.icon}`;
 
     return (
         <main
