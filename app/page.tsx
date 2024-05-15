@@ -10,15 +10,19 @@ export default async function Home() {
         { cache: "no-store" }
     ).then((res) => res.json());
 
+    const imageURL = `https://${weather.current?.condition.icon}`;
+
     return (
         <main
             className={`w-full h-[100vh] flex items-center justify-center ${
-                weather.current?.is_day ? "bg-white text-black" : "bg-black text-white"
+                weather.current?.is_day
+                    ? "bg-white text-black"
+                    : "bg-black text-white"
             }`}
         >
             <section className="flex flex-col items-center">
                 <Image
-                    src={`https://${weather.current?.condition.icon}`}
+                    src={imageURL}
                     width={64}
                     height={64}
                     alt="Weather icon"
